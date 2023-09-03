@@ -8,7 +8,6 @@ type Props = {
 };
 
 const ContactUs = ({ setSelectedPage }: Props) => {
-  const inputStyles = `w-3/5 bg-white text-black px-5 py-3 placeholder-black`;
 
   return (
     <section id="contact" className="mx-auto h-3/4 flex items-center justify-center pt-24 pb-32 bg-[#E7ECFF]">

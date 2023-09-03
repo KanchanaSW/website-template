@@ -37,7 +37,7 @@ const About4 = ({ setSelectedPage }: Props) => {
           </motion.div>
 
           <motion.div
-            className="mt-10 basis-3/5 md:mt-0"
+            className="mt-10 basis-3/5 md:mt-0 flex flex-col justify-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -53,7 +53,7 @@ const About4 = ({ setSelectedPage }: Props) => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nam optio hic necessitatibus atque alias sed voluptates quasi, tempora repellat omnis enim veritatis explicabo ea illo adipisci libero possimus voluptatibus.
             </p>
             <br />
-            <ActionButton setSelectedPage={setSelectedPage}>Purchase Now</ActionButton>
+            {/* <ActionButton setSelectedPage={setSelectedPage}>Purchase Now</ActionButton> */}
 
           </motion.div>
         </div>

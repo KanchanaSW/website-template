@@ -36,7 +36,7 @@ const About2 = ({ setSelectedPage }: Props) => {
           </motion.div>
 
           <motion.div
-            className="mt-10 basis-3/5 md:mt-0"
+            className="mt-10 basis-3/5 md:mt-0 flex flex-col justify-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
