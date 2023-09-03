@@ -2,7 +2,6 @@ import { SelectedPage } from '@/shared/types';
 import { motion } from "framer-motion"
 import AboutGraphic from '@/assets/about4.png'
 import HText from '@/shared/HText';
-import ActionButton from '@/shared/ActionButton';
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
