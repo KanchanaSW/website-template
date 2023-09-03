@@ -1,7 +1,6 @@
 export enum SelectedPage {
     Home = "home",
-    NewArrivals = "newarrivals",
-    Favorite = "favorite",
+    About = "about",
     Contact = "contact",
   }
 

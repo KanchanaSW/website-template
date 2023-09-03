@@ -28,7 +28,7 @@ module.exports = {
         rectangle: "url('./assets/Rectangle 2.png')",
         newArrivals: "url('./assets/Vector 8.png')",
         sparkles: "url('./assets/Sparkles.png')",
-        circles: "url('./assets/Circles.png')",
+        homeBack: "url('./assets/Home-back.png')",
       },
     },
     screens: {

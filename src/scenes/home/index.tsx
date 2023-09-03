@@ -1,6 +1,6 @@
 import { SelectedPage } from '@/shared/types'
 import ActionButton from '@/shared/ActionButton'
-import HomePageGraphic from '@/assets/catalogue1.png'
+import HomePageGraphic from '@/assets/Home.png'
 import Sponsor1 from '@/assets/Rectangle 36.png'
 import Sponsor2 from '@/assets/Rectangle 38.png'
 import Sponsor3 from '@/assets/Rectangle 41.png'
@@ -9,6 +9,7 @@ import Sponsor5 from '@/assets/Rectangle 44.png'
 import Sponsor6 from '@/assets/Rectangle 45.png'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { motion } from 'framer-motion'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 type Props = {
     setSelectedPage: (value:SelectedPage) => void;
@@ -20,12 +21,12 @@ const Home = ({setSelectedPage}: Props) => {
   return (
     <section 
         id='home'
-        className='gap-16 bg-white py-10 md:h-full md:pb-0'
+        className='gap-16 py-10 md:h-full md:pb-0'
     >
         {/* image and main header */}
         <motion.div 
             // style={{backgroundColor: "#F4F6F5", margin: '10%'}}
-            className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
+            className='md:flex mx-auto ml-32 items-center justify-center md:h-5/6'
             onViewportEnter={() => setSelectedPage(SelectedPage.Home)}    
         >
             {/* main header */}
@@ -45,16 +46,13 @@ const Home = ({setSelectedPage}: Props) => {
                     <div className='relative'>
                         <div className='before:absolute before:-top-20 before:-left-20 before:z-[-1]'>
                             {/* <img src={HomePageText} alt="home-page-text" /> */}
-                            <div className='text-7xl font-bold'>LET'S <br/>
-                                EXPLORE <br />
-                                UNIQUE <br />
-                                CLOTHES. 
-                                </div>
+                            <div className='text-4xl font-bold'>Introduce Your Product 
+                             Quickly & Effectively </div>
                         </div>
                     </div>
 
                     <p className='mt-8 text-lg'>
-                        Live for Influential and Innovative fashion!
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse cumque placeat animi sunt consectetur earum. Quam laboriosam explicabo deleniti quibusdam vel, hic error, maxime corrupti facere est iste dignissimos dolores!
                     </p>
                 </motion.div>
 
@@ -70,18 +68,30 @@ const Home = ({setSelectedPage}: Props) => {
                         visible:{opacity:1,x:0}
                     }}
                 >
-                    <ActionButton setSelectedPage={setSelectedPage}>Shop Now</ActionButton>
+                    <ActionButton setSelectedPage={setSelectedPage}>Buy Now</ActionButton>
+                    <AnchorLink 
+                        className='text-sm font-bold hover:text-black px-10 py-2 border-solid border-2 border-[#111B47]'
+                        onClick={() =>setSelectedPage(SelectedPage.Contact)}
+                        href={`${SelectedPage.Contact}`}
+                    >
+                        <p>Learn More</p>
+                    </AnchorLink>
                    
                 </motion.div>
             </div>
             {/* image */}
-            <div className='flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-5 md:justify-items-end'>
-                <img src={HomePageGraphic} alt="home-pageGraphic" />
+            <div className='flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-5 md:justify-items-end pt-11'>
+                <img src={HomePageGraphic} alt="home-pageGraphic"/>
+                    {/* <div className='relative'>
+                        <div className='before:absolute before:z-[-1] before:content-homeBack'>
+                            <img src={HomePageGraphic} alt="home-pageGraphic"  />
+                        </div>
+                    </div> */}
             </div>
         </motion.div>
 
         {/* sponsers */}
-        {isAboveMediumScreens && (
+        {/* {isAboveMediumScreens && (
             <div className='h-[150px] w-full bg-[#EBD96B] py-10'>
                 <div className='mx-auto w-5/6'>
                     <div className='flex w-auto items-center justify-evenly gap-8'>
@@ -94,7 +104,7 @@ const Home = ({setSelectedPage}: Props) => {
                     </div>
                 </div>
             </div>
-        )}
+        )} */}
     </section>
   )
 }
