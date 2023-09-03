@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import HText from "@/shared/HText";
+import ActionButton from "@/shared/ActionButton";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -10,27 +10,14 @@ type Props = {
 const ContactUs = ({ setSelectedPage }: Props) => {
   const inputStyles = `w-3/5 bg-white text-black px-5 py-3 placeholder-black`;
 
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async (e: any) => {
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
-    }
-  };
-
   return (
-    <section id="contact" className="mx-auto h-3/4 flex items-center justify-center pt-24 pb-32 bg-[#E5C643]">
+    <section id="contact" className="mx-auto h-3/4 flex items-center justify-center pt-24 pb-32 bg-[#E7ECFF]">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}
       >
         {/* HEADER */}
         <motion.div
-          className="basis-1/2 text-center"
+          className="text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -41,17 +28,15 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           }}
         >
           <HText>
-            <span className="text-white text-4xl">JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO</span> 
+            <span className="text-4xl">A Price To Suit Everyone</span> 
           </HText>
-          <p className="my-5 text-white">
-            Type your email down below and be young wild generation
+          <p className="my-5 md:mx-96">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit consectetur ullam dignissimos reprehenderit quis natus, dolor est autem hic beatae fuga! Similique non iste animi quam cumque voluptates excepturi modi.
           </p>
         </motion.div>
 
-        {/* FORM AND IMAGE */}
-        <div className="mt-10 justify-center gap-8 md:flex">
-          <motion.div
-            className="mt-10 basis-3/5 md:mt-0"
+        <motion.div
+            className="md:mt-12 text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -61,40 +46,14 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <form
-              className="flex justify-center"
-              target="_blank"
-              onSubmit={onSubmit}
-              action="https://formsubmit.co/1671b67b70b11931d4c4b0eb69e6dfde"
-              method="POST"
-            >
-              <input
-                className={inputStyles}
-                type="text"
-                placeholder="EMAIL"
-                {...register("email", {
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
-              />
-              {errors.email && (
-                <p className="mt-1 text-primary-500">
-                  {errors.email.type === "required" &&
-                    "This field is required."}
-                  {errors.email.type === "pattern" && "Invalid email address."}
-                </p>
-              )}
+          <HText>
+              <span className="text-7xl">$50</span> 
+          </HText>
 
-              <button
-                type="submit"
-                className="rounded-md bg-black text-white px-10 py-2 hover:bg-gray-200 hover:text-black "
-              >
-                Send
-              </button>
-            </form>
-          </motion.div>
+          <p className="mt-12 mb-4 text-[#5D6970]">See, One price. Simple.</p>
 
-        </div>
+          <ActionButton setSelectedPage={setSelectedPage}>Purchase Now</ActionButton>
+        </motion.div>
       </motion.div>
     </section>
   );
